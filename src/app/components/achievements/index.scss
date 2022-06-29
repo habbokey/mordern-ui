@@ -1,0 +1,407 @@
+.nitro-achievements {
+    width: $achievements-width;
+    position: absolute;
+
+    .grid-container {
+
+        .grid-items {
+
+            .item-detail {
+                height: 50px;
+                max-height: 50px;
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                .detail-info {
+                    
+                    .count {
+                        top: 0.16rem;
+                        right: 3px;
+                        font-size: 10px;
+                    }
+
+                    .achievement-progress {
+                        position: absolute;
+                        bottom: 8.5px;
+                        text-align: center;
+                        font-size: 12px;
+                        left: 0;
+                        right: 0;
+                    }
+                }
+            }
+        }
+
+        &.achievement-category-container {
+
+            .grid-items {
+                margin-top: -7px;
+
+                .item-detail {
+                    height: 80px;
+                    max-height: 80px;
+                    width: calc(1 / 3 * 100% - (1 - 1 / 3) * 7px);
+                    margin: 7px 7px 0 0;
+                }
+            }
+
+        }
+    }
+
+    //     &.achievement-category-container {
+
+    //         .grid-items {
+    //             margin-top: -7px;
+        
+    //             .item-detail {
+    //                 height: 80px;
+    //                 max-height: 80px;
+    //                 width: calc(1 / 3 * 100% - (1 - 1 / 3) * 7px);
+    //                 margin: 7px 7px 0 0;
+    //             }
+    //         }
+    //     }
+    // }
+
+    .achievement-category-badge-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 52px);
+        grid-row-gap: 5px;
+        grid-column-gap: 5px;
+    }
+
+    .badge_preview {
+        width:100px;
+        height:100px;
+
+        img {
+            transform: scale(2);
+        }
+    }
+    
+    .greyscale {
+        filter: grayscale(1);
+    }
+
+    .achievement-progress-bar {
+
+        .achievement-progress-bar-content {
+            position: absolute;
+            top:0;
+            bottom:0;
+            margin:auto;
+            left:0;
+            right:0;
+        }
+
+        .achievement-progress-bar-inner {
+            transition: width 0.7s;
+            max-width: 100%;
+        }
+    }
+
+    .achievement-unseen {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        font-size: 10px;
+    }
+}
+
+.basari-secilmedi {
+    width: 410px;
+    height: 130px;
+    background: #dddea4;
+    position: absolute;
+    top: 70px;
+    color: black;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 44px 60px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.achievements-mobile {
+    display: none;
+}
+
+.ach-category {
+    display: none;
+}
+
+@media only screen and (max-width: 850px), (max-height: 450px) {
+    #basaripuan {
+        display: none !important;
+    }
+    .achievements-mobile {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(140deg, #264157 0%, #255276f9 50%, #225680f7 75%);
+        position: absolute;
+        z-index: 100000;
+        display: block !important;
+        .achcontainer {
+            display: flex;
+            justify-content: space-between;
+            height: 36vw;
+            overflow: hidden;
+            padding-top: 40px;
+            .tumBasarilar-box {
+                height: 100%;
+                overflow: auto;
+                padding: 0px 10px;
+                box-sizing: border-box;
+                .toplam-basarilar {
+                    width: 404px;
+                    height: 100%;
+                    background: #c4ced729;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    overflow: auto;
+                    padding-bottom: 7px;
+                    .basari-box {
+                        width: 125px;
+                        height: 105px;
+                        background: #ffffff4f;
+                        float: left;
+                        margin-left: 7px;
+                        margin-top: 7px;
+                        border-radius: 7px;
+                        box-shadow: 3px 3px 0px 0px #00000008;
+                        position: relative;
+                        color: white;
+                        .basariactive {
+                            background: rgb(255 255 255 / 70%) !important;
+                        }
+                        .basari-rozet-box {
+                            width: 125px;
+                            height: 83px;
+                            background: #afbcc8;
+                            border-top: solid 0px #ffffff;
+                            border-bottom: solid 0px #b2b6b9;
+                            border-radius: 5px;
+                            box-sizing: content-box;
+                            filter: drop-shadow(0px 0px 2px #0000001f);
+                            .basari-rozet-img {
+                                width: 125px;
+                                height: 82px;
+                                background-position: center center;
+                                background-repeat: no-repeat;
+                                .rozet-basari-bilgi {
+                                    padding: 53.5px 29px 8px;
+                                    text-align: center;
+                                    font-size: 12px;
+                                    font-weight: bolder;
+                                    letter-spacing: 0.5px;
+                                    font-family: Arial;
+                                }
+                            }
+                        }
+                        .basari-ad {
+                            text-align: center;
+                            padding: 2px;
+                            color: #ffffff;
+                            font-weight: bold;
+                            font-size: 12.5px;
+                            font-family: 'Ubuntu';
+                        }
+                    }
+                }
+                .guncelBasariPuani-box {
+                    width: 380px;
+                    height: 20px;
+                    background: #c4ced729;
+                    float: left;
+                    margin: 15px 15px 5px 15px;
+                    border-radius: 5px;
+                    position: absolute;
+                    top: -5px;
+                    right: 30px;
+                    .basariilerleme {
+                        height: 100%;
+                        background: #1fb742de;
+                        float: left;
+                        border-radius: 5px;
+                        border-top: solid 0px #06c7cac7;
+                        border-bottom: solid 0px #027375c7;
+                        position: absolute;
+                        box-sizing: content-box;
+                    }
+                    .basari-puan-bilgi {
+                        margin: 0px;
+                        padding: 2px;
+                        text-align: center;
+                        color: #ffffffeb;
+                        font-size: 12px;
+                        z-index: 1111;
+                        position: absolute;
+                        width: 100%;
+                        font-weight: bold;
+                    }
+                }
+                .basari-aciklama-info {
+                    text-align: center;
+                    font-size: 14px;
+                    color: white;
+                    width: 100%;
+                    height: 4vw;
+                    display: flex;
+                    font-family: "Ubuntu";
+                    align-items: center;
+                    padding: 17px 10px 10px 0px;
+                    font-weight: bold;
+                    font-size: 16px !important;
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                }
+            }
+            .tumBasarilar-bilgi-box {
+                display: none;
+            }
+            .ach-category {
+                display: block !important;
+                box-sizing: border-box;
+                width: 101.5vh;
+                height: 100%;
+                background: #c4ced729;
+                border-radius: 5px;
+                cursor: pointer;
+                padding: 5px;
+                .ach-catecontainer {
+                    width: 100%;
+                    height: 100%;
+                    overflow: auto;
+                    font-family: "Ubuntu";
+                    overflow-x: hidden;
+                }
+                .category-info {
+                    background: #ffffff2e;
+                    border-radius: 5px;
+                    padding: 0px 5px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+                .category-info-box {
+                    background: #ffffff2e;
+                    border-radius: 5px;
+                    padding: 0px 5px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    display: flex;
+                    height: auto;
+                }
+                .selected-achievement-img {
+                    min-width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 5px 0px;
+                    background: #ffffff2e;
+                    border-radius: 5px;
+                }
+                .selected-achievement-desc {font-size: 13px;font-weight: 500;line-height: 14px;margin-top: -2px;}
+                .selected-ach_info {
+                    font-size: 14px;
+                    padding: 5px;
+                }
+                .selected-achievement-info {
+                    width: 101%;
+                    height: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                .selected-achievement-badge {
+                    width: 50px;
+                    height: 50px;
+                    background: #ffffff42;
+                    margin-bottom: 3.5px;
+                    border-radius: 5px;
+                    margin-right: 3px;
+                }
+                
+                .selected-achievement-badge-box {
+                    width: 50px;
+                    height: 50px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+                
+                .active {
+                    background: #23ab49;
+                }
+            }
+            .ach-title {
+                width: 100%;
+                height: 4vw;
+                display: flex;
+                font-family: "Ubuntu";
+                align-items: center;
+                padding: 0px 10px;
+                font-weight: bold;
+                font-size: 16px;
+                position: absolute;
+                z-index: 1;
+                top: 0;
+            }
+            .ach-right-close {
+                min-width: 40px;
+                width: 5vw;
+                height: 81vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 6px;
+                z-index: 1;
+                .ach-close {
+                    width: 34px;
+                    height: 30px;
+                    box-sizing: content-box;
+                    border-radius: 5px;
+                    background: #f72718;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    right: 5px;
+                    top: 5px;
+                    .closeshadow {
+                        width: 75%;
+                        height: 3px;
+                        background: #ff6e6e;
+                        position: absolute;
+                        top: 2px;
+                        border-radius: 20px;
+                    }
+                    .closetab1 {
+                        width: 16px;
+                        height: 2.5px;
+                        background: white;
+                        float: left;
+                        position: absolute;
+                        transform: rotate(45deg);
+                    }
+                    .closetab2 {
+                        width: 16px;
+                        height: 2.5px;
+                        background: white;
+                        float: left;
+                        position: absolute;
+                        transform: rotate(135deg);
+                    }
+                }
+            }
+        }
+    }
+}

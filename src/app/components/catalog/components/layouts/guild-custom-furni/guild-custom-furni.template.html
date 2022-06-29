@@ -1,0 +1,54 @@
+
+<div class="mobiler-magaza-box">
+    <div class="magaza-mobiler-onizleme">
+        
+        <div id="magaza-mobilya-onizleme-box" *ngFor="let offer of offers" (click)="selectOffer(offer)" [ngClass]="{ 'mgzmobiactive': (activeOffer === offer)}">
+            <div class="xurun" *ngIf="(offerCount(offer) > 1)"><p class="xurun-adet">x{{ offerCount(offer) }}</p></div>
+            <div class="mobi-ufak-icon" [ngStyle]="{ 'background-image': 'url(' + offerImage(offer) + ')' }"></div>
+            <div class="mobi-fiyat-box">
+                <div *ngIf="offer.priceCredits" class="mobi-fiyat">
+                    <div class="mobi-fiyat-sayi">{{ offer.priceCredits }}</div>
+                    <img class="magaza-kredi-ico" src="/assets/images/magaza-kredi.png">
+                </div>
+                <div *ngIf="offer.priceActivityPoints" class="mobi-fiyat">
+                    <div class="mobi-fiyat-sayi">+ {{ offer.priceActivityPoints }}</div>
+                    <i class="icon icon-currency-{{ offer.priceActivityPointsType }} magaza-kredi-ico"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="!activeOffer" class="kategoriresim">
+        <img *ngIf="getImage(1)" [src]="getImage(1)" image-placeholder />
+    </div>
+
+    <div *ngIf="activeOffer" class="magaza-mobi-satin-box">
+        <div badge-image class="position-absolute" style="right: 10px; z-index: 1;" [badge]="selectedGroup.badge" [isGroup]="true" [asBackground]="true"></div>
+        <div class="mobi-bilgiler-header">
+            <div class="mobi-bilgi-detaylar">?</div>
+            <div class="mobi-bilgi-ad">{{ offerName(activeOffer) }}</div>
+        </div>
+        <div class="mgz-mobi-gorunumu" nitro-room-preview-component [roomPreviewer]="roomPreviewer" [width]="233" [height]="160" style="position: relative;z-index: 1;"></div>
+        <div class="mobigrupsec">
+            <div class="mgz-mobi-aciklamasi">{{ 'group.edit.base.select.room' | translate }}</div>
+            <div class="mobi-grupSec-box">
+                <div class="grup-oda-sec">
+                    <div class="gruplardan-sec">
+                        <div class="grup-icon">
+                            <button class="groupmobirenk" [ngStyle]="{backgroundColor: '#' + selectedGroupColorA}"></button>
+                            <button class="groupmobirenk" [ngStyle]="{backgroundColor: '#' + selectedGroupColorB}"></button>
+                        </div>
+                        <select class="liste-forum-grupAdi" [(ngModel)]="selectedGroupId">
+                            <option *ngFor="let group of groups" [value]="group.id">{{ group.title }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="activeOffer" nitro-catalog-purchase-component
+    [activePage]="activePage"
+    [activeOffer]="activeOffer"
+    [quantityEnabled]="activeOffer.bundlePurchaseAllowed"
+    [forcedExtra]="selectedGroupId"></div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+
+
+<div class="messenger-chat-box">
+    <div class="chat-userinfo">
+        <div class="modern-avatarimg" nitro-avatar-image [headOnly]="1" [figure]="thread.participant.figure" [direction]="2"></div>
+        <div class="userinfo-doc">
+            <p class="userinfo-name">{{ participant.name }}</p>
+            <p class="userinfo-motto">{{ participant.motto }}</p>
+        </div> 
+        <div ngbDropdown>
+            <div class="chat-user_relationship" ngbDropdownToggle>{{ relations[thread.participant.relationshipStatus] }}</div>
+            <div class="dropdown-menu" ngbDropdownMenu style="width: 124px;">
+                <button style="font-size: 13px;" class="dropdown-item small" *ngFor="let relation of relations; let i = index;" (click)="changeRelation(i)" ngbDropdownItem><div class="relationicon"></div> {{ relation }}</button>
+            </div>
+
+            <div class="chat-user_follow" *ngIf="(participant.online)" (click)="followParticipant()">
+                <i class="fas fa-caret-right i-fa-opacity" aria-hidden="true"></i>
+                <i class="fas fa-caret-right" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <p class="chat-whochat">{{ ('securitytext1') | translate }}</p>
+    <div class="messenger-chat-main">
+        <div class="chat-main">
+            <div class="message-list" #content>
+                <div class="bot-message messagebox-maxcontent">
+                    <div class="message-sent-main">
+                        <div class="message-useravatar">
+                            <img src="assets/images/messenger/BOT.gif">
+                        </div>
+                        <div class="message-info">
+                            <p class="messagesent-username" style="color: #1e7295;">{{ ('quests.VIP_Parties_2.click_bouncer.name') | translate }}:</p>
+                            <p class="messagesent-article">{{ ('securitytext2') | translate }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pm">
+                    <div class="pm-hr">
+                        <div class="pm-text">{{ participant.name }} + {{ ('toolbar.icon.label.memenu') | translate }}</div>
+                    </div>
+                </div>
+                <div #messages *ngFor="let chat of chats" class="mchat-left messagebox-maxcontent" [ngClass]="[ (chat.senderId === participant.id) ? 'mchat-left' : 'mchat-right' ]">
+                    <div class="message-sent-main">
+                        <div class="message-useravatar">
+                            <div class="chat-msgbox-avatarimage" nitro-avatar-image [headOnly]="1" [figure]="thread.participant.figure" [direction]="3"></div>
+                        </div>
+                        <div class="message-info">
+                            <p class="messagesent-username sendmessage-your">{{ participant.name }}:</p>
+                            <p class="messagesent-username sendmessage-me">{{ ('toolbar.icon.label.memenu') | translate }}</p>
+                            <p class="messagesent-article">{{ chat.message }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-write_message">
+            <input class="chat-write" placeholder="write message..." type="text" maxLength="420" (keydown.enter)="onKeyDownEvent($event)">
+        </div>
+    </div>
+</div>

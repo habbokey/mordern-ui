@@ -1,0 +1,19 @@
+<div class="wardrobe-description">
+    <p class="my-wardrobe-head">{{ ('avatareditor.wardrobe.title') | translate }}</p>
+    <p class="my-wardrobe-choose"><i class="fas fa-angle-right"></i> {{ ('avatareditor.wardrobe.choose') | translate }}</p>
+    <p class="wardrobe-desc">{{ ('avatareditor.wardrobe.club.required') | translate }}</p>
+</div>
+
+<div class="avatarp-wardrobe-box">
+    <div *ngFor="let in of counter(); let i = index" class="wardrobe-processing-center">
+        <div class="wardrobe-user-clothing-box">
+            <div class="wardrobe-avatar" nitro-avatar-image [figure]="getLook(i + 1)" [direction]="3"></div>
+        </div>
+        <div class="put-it-in-wardrobe" (click)="loadLook(i + 1)">
+            <img src="assets/images/avatareditor/out.png">
+        </div>
+        <div class="use-the-outfit" (click)="updateLook(i + 1)">
+            <img src="assets/images/avatareditor/inside.png">
+        </div>
+    </div>
+</div>

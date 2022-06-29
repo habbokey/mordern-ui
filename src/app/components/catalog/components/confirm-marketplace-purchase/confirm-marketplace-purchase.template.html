@@ -1,0 +1,57 @@
+<div class="hotel-alert">
+    <div [bringToTop] [draggable] class="catalogue-alert" [center]="true">
+        <div id="alert-header">
+            <div class="modern_alert-header-text">{{ ( 'catalog.marketplace.confirm_title') | translate }}</div>
+        </div>
+        <div class="modern_alert_body">
+            <div class="catalogue-buymobi-main">
+                <div *ngIf="offer && offer.stuffData.uniqueNumber" class="unique-counter-compact" style="right: 0px;">
+                    <div [innerHTML]="offer.stuffData.uniqueNumber | uniqueNumber"></div>
+                    <div [innerHTML]="offer.stuffData.uniqueSeries | uniqueNumber"></div>
+                </div>
+                <div #imageElement class="catalogue-buymobi" [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')'}"></div>
+
+                <div class="catalogue-buymobi-description">
+                    <p class="catalogue-buymobi-name">{{ getFurniTitle() }}</p>
+                    <p class="catalogue-buymobi-name" style="font-size: 13px;color: #000000a8;line-height: 15px;padding-bottom: 5px;height: 18px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{ getFurniDescription() }}</p>
+                    <p class="catalogue-buymobi-piece">{{ getOfferCount() }}</p>
+                    <div class="catalogue-buymobi-price">
+                        <p *ngIf="costCredits" class="cbm-credits">{{ costCredits }} <i class="catalogue_buy-currency-1"></i></p>
+                    </div>
+                    <div style="width: 212px;background: #cfcfcf;float: left;margin-top: 5px;border-radius: 5px;font-size: 12px;padding: 2px 5px 1px 5px;line-height: 15px;color: #313131;font-weight: bold;">{{ getAveragePrice() }}</div>
+                </div>
+            </div>
+            <div class="mobile-buymobi-main">
+                <div class="mobile-buymobi-name">
+                    {{ getFurniTitle() }}
+                    <div class="mobi-piece">{{ getOfferCount() }}</div>
+                </div>
+                <div #imageElement class="mobile-mobi-preview" [ngStyle]="{ 'background-image': 'url(' + imageUrl + ')'}"></div>
+                <div class="mobilebuy-w40">
+                    <div class="mobile-buymobi-button-main">
+                        <div class="mobile-buymobi-price">
+                            <p *ngIf="costCredits" class="mobile-mobi-credits">{{ costCredits }} <i class="catalogue_buy-currency-1"></i></p>
+                            
+                        </div>
+                        <div class="mobile-buymobi-button">
+                            <div class="mobile-buymobi-cancel" (click)="hide()">
+                                <div class="h-k-yazi">{{ ('catalog.purchase_confirmation.cancel') | translate }}</div>
+                            </div>
+                            <div class="mobile-buymobi-confirmation" (click)="buy()">
+                                <div class="h-k-yazi">{{ 'catalog.purchase_confirmation.buy' | translate }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-group w-100 mobile-none">
+                <div class="choices-button" (click)="hide()">
+                    <div class="h-k-yazi">{{ ('catalog.purchase_confirmation.cancel') | translate }}</div>
+                </div>
+                <div class="choices-button" (click)="buy()">
+                    <div class="h-k-yazi">{{ 'catalog.purchase_confirmation.buy' | translate }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

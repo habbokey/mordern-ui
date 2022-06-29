@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Nitro</title>
+    <base href="/">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <app-root></app-root>
+
+<script>
+    var NitroConfig = {
+        "config.urls": ("/renderer-config.json,/ui-config.json").split(','),
+        "sso.ticket": (new URLSearchParams(window.location.search).get('sso') || null),
+        "socket.url": "ws://localhost:2096",
+        "asset.url": "http://assets.localhost",
+        "image.library.url": "http://assets.localhost/c_images/",
+        "hof.furni.url": "http://assets.localhost",
+        "url.prefix": "http://localhost:3000"
+    };
+</script>
+
+
+</body>
+</html>

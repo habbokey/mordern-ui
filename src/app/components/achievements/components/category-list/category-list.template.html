@@ -1,0 +1,18 @@
+<div class="tumBasarilar-box">
+    <div class="toplam-basarilar">
+        <div class="basari-box" *ngFor="let category of categories" (click)="selectCategory(category)">
+            <div *ngIf="getUnseenCount(category)" class="mobicountbox2"><p class="count-txt">{{ getUnseenCount(category) }}</p></div>
+            <div class="basari-rozet-box" [ngClass]="[ ((selectedCategory === category) ? 'basariactive' : 'basari-rozet-box' ) ]">
+                <div class="basari-rozet-img" [ngStyle]="{ 'background-image': 'url(' + getCategoryImage(category.name, category.achievements) + ')' }">
+                    <div class="rozet-basari-bilgi">{{ getCategoryProgress(category.achievements) }}</div>
+                </div>
+            </div>
+            <div class="basari-ad">{{ ('quests.' + category.name + '.name') | translate }}</div>
+        </div>
+    </div>
+    <div class="guncelBasariPuani-box">
+        <div class="basariilerleme" [ngStyle]="{ width: getProgressPercentageString() }"></div>
+        <p class="basari-puan-bilgi">{{ getProgressString() }}</p>
+    </div>
+    <div class="basari-aciklama-info">{{ ('achievements.categories.score') | translate: 'score': achievementScore }}</div>
+</div>

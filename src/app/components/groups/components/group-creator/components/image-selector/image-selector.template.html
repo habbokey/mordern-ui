@@ -1,0 +1,13 @@
+
+
+<div class="groupbadge_position-head-text">
+    <p class="grouptext-5">{{ ('group.edit.badge.pick.symbol') | translate }}</p>
+</div>
+<div class="group-image-secimi">
+    <div class="groupwhitebg">
+        <div class="group-image-list">
+            <button class="groupimage" *ngIf="!part.isBase" [ngClass]="{'active': part.key === 0}" (click)="selectPart(0)"><img src="/assets/images/avatareditor/cross.png"></button>
+            <button class="groupimage" badge-image *ngFor="let item of items | keyvalue" [ngClass]="{'gactive': part.key === item.key}" [badge]="getBadgeCode(item.key)" [isGroup]="true" [asBackground]="true" (click)="selectPart(item.key)"></button>
+        </div>
+    </div>
+</div>

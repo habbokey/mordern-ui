@@ -1,0 +1,31 @@
+
+
+<div id="oldhabbo_motto" class="mnone">
+    <div class="motto-header">
+        <div class="motto-username">{{ botData.name }}</div>
+        <i class="fas fa-times" (click)="hide()"></i>
+    </div>
+    <div class="motto-hr"></div>
+    <div class="motto-avatar-view">
+        <div class="bot">
+            <div nitro-avatar-image [figure]="botData.figure" [direction]="4" style="left: -12px;top: -10px;position: relative;"></div>
+        </div>
+    </div>
+    <div class="motto-badges-section-bot">
+        <div class="motto-badge-box" *ngFor="let badge of botData.badges">
+            <div badge-image *ngIf="(badge !== '')" [badge]="badge"></div>
+        </div>
+    </div>
+    <div class="motto-hr"></div>
+    <div *ngIf="(botData.motto !== '')" class="mottotxtbox" style="position: relative;float: left;">
+        <span class="usermotto">{{ botData.motto }}</span>
+    </div>
+    <div class="motto-hr"></div>
+    <div class="motto-success-score">
+        <p *ngIf="(botData.ownerId > 0)" class="user-score">{{ ownerText }}</p>
+    </div>
+    <div class="motto-hr"></div>
+    <div class="motto-success-score">
+        <p *ngIf="(botData.carryItem > 0)" class="user-score">{{ carryText }}</p>
+    </div>
+</div>

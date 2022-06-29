@@ -1,0 +1,397 @@
+.nitro-avatar-editor {
+    position: absolute;
+    width: 600px;
+    max-width: 600px;
+
+    .grid-container {
+        &.palette-grid {
+            .grid-items {
+                .item-detail {
+                    height: 25px !important;
+                    max-height: 25px !important;
+
+                    .detail-info {
+                        &:hover,
+                        &.active {
+                            border-color: rgba($white, 1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .grid-items {
+            .item-detail {
+                height: 50px;
+                max-height: 50px;
+            }
+        }
+    }
+
+    .avatar-spotlight {
+        top: -51px;
+        width: 130px;
+        height: 305px;
+        background: transparent url("^assets/images/avatareditor/spotlight.png")
+            no-repeat center;
+        opacity: 0.3;
+        pointer-events: none;
+    }
+
+    .avatar-shadow {
+        width: 80px;
+        height: 45.5px;
+        margin-top: 192px;
+        border-radius: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    .avatar-container {
+        margin-top: 50px;
+        pointer-events: none;
+
+        .avatar-image {
+            position: absolute;
+        }
+    }
+
+    .arrow-container {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 23px;
+
+        .icon {
+            cursor: pointer;
+        }
+
+        .arrow-left-icon {
+            margin-right: 10px;
+        }
+    }
+}
+
+.search-result-item {
+    cursor: pointer;
+}
+
+.nitro-avatar-wardrobe-component {
+    .nitro-avatar-image {
+        width: 50px;
+        overflow: hidden;
+
+        img {
+            margin-top: -20px;
+        }
+    }
+}
+
+// Mobile
+.mobile-nitro-avatar-editor {
+    display: none;
+}
+.mavatare-body {
+    display: none;
+}
+.m-gorunumler-display {
+    display: none;
+}
+.m-platte {
+    display: none;
+}
+@media only screen and (max-width: 850px), (max-height: 450px) {
+    #avatarEditor {
+        display: none;
+    }
+    .avatarEditor-alt_menu {
+        display: none;
+    }
+    .ngcontainer-activecategory {
+        display: none;
+    }
+    .avatarEditor-primary-color-box {
+        display: none;
+    }
+    .ae-box {
+        display: none;
+    }
+    .ae-color-scrollbar {
+        display: none;
+    }
+    .gorunumler-box {
+        display: none;
+    }
+    .wardrobe-description {
+        display: none;
+    }
+    .avatarp-wardrobe-box {
+        display: none;
+    }
+    .mobile-nitro-avatar-editor {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            140deg,
+            #264157 0%,
+            #255276f9 50%,
+            #225680f7 75%
+        );
+        position: absolute;
+        z-index: 100000 !important;
+        display: block;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        .mavatare-body {
+            display: block !important;
+        }
+        .mobile-avatar-editor-body {
+            width: 100vw;
+            height: 80vh;
+            position: relative;
+            .mavatare-menu {
+                width: 100%;
+                height: 40px;
+                overflow: hidden;
+                padding: 5px;
+            }
+            .mavatare-menubox {
+                background: #ffffff5e;
+                border: none;
+                color: white;
+                height: 30px;
+                font-size: 14px;
+                margin: 0px 5px 0px 0px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .mavatare-menubox-text {
+                float: left;
+                position: relative;
+                width: max-content;
+                padding: 0;
+                border: none !important;
+                font-size: 14px !important;
+                font-family: "Ubuntu";
+                font-weight: bold;
+            }
+            .mavatare-menubox.active {
+                background: #ffffffc9 !important;
+                color: black !important;
+                height: 30px;
+                font-size: 14px;
+                margin: 0px 5px 0px 0px;
+                border: none !important;
+            }
+            .mavatare-menu-select {
+                height: 100%;
+                width: 40px;
+                box-sizing: border-box;
+                float: left;
+                padding: 0px 5px;
+            }
+            .object-select-box {
+                background: #ffffff5e;
+                border: none;
+                color: white;
+                height: 30px;
+                font-size: 14px;
+                margin: 0px 5px 0px 0px;
+                border-radius: 5px;
+                cursor: pointer;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+            .object-select-box.active {
+                background: #ffffffc9 !important;
+            }
+        }
+        .m-gorunumler-display {
+            display: block !important;
+            .m-gorunumler-box {
+                width: 50vw;
+                height: 66vh;
+                float: left;
+                overflow: auto;
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                align-content: flex-start;
+                .m-clothes-box {
+                    width: 45px;
+                    height: 45px;
+                    background: #ffffff30;
+                    margin-right: 5px;
+                    margin-bottom: 5px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .m-aeditor_clothes {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    width: 45px;
+                    height: 45px;
+                }
+
+                .m-aEditor-liste-menu-box:hover {
+                    background: #c1c8d0;
+                }
+
+                .m-ae-active {
+                    background: #ffffff69 !important;
+                }
+                .m-gorunum-sifirla {
+                    width: 45px;
+                    height: 45px;
+                    background: url("^assets/images/avatareditor/gorunum-sifirla.png");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+        .m-avatar-preview-box {
+            position: fixed;
+            right: 0;
+            width: 9vw;
+            height: 77vh;
+            top: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background: #ffffff69;
+            box-shadow: 2px 0px 20px 0px #0000003d;
+            box-sizing: border-box;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .m-avatar-gorunum-preview-box {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .m-avatar-stand-img {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0px 0px 10px);
+            color: #ffffff99;
+            margin-bottom: 5px;
+            height: 110px;
+            img.avatar-image.scale-1 {
+                top: -13px;
+            }
+        }
+
+        .m-avatar-change-direction-left {
+            width: 30px;
+            height: 30px;
+            background: #0000001c;
+            background-image: url("^assets/images/avatareditor/mobile/leftright.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+
+        .m-avatar-change-direction-right {
+            width: 30px;
+            height: 30px;
+            background: #0000001c;
+            background-image: url("^assets/images/avatareditor/mobile/leftright.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            transform: rotate(180deg);
+        }
+
+        .m-button-avatar-gorunum-temizle {
+            width: 30px;
+            height: 30px;
+            background: #0000001c;
+            background-image: url();
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            background-image: url("^assets/images/avatareditor/mobile/rest.png");
+        }
+
+        .m-button-avatar-gorunum-kaydet {
+            width: 30px;
+            height: 30px;
+            background: #0000001c;
+            background-image: url();
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            background-image: url("^assets/images/avatareditor/mobile/finish.png");
+        }        
+        .m-platte {
+            display: block !important;
+            .avatarEditor-primary-color-box {
+                display: block !important;
+            }
+            .ae-color-scrollbar {
+                display: block !important;
+            }
+            .avatarEditor-primary-color-box {
+                width: 100%;
+                height: 66vh;
+            }
+            
+            .avatarEditor-secondary-color-box {
+                width: 100%;
+            }
+            
+            .clothes-color-selected {
+                width: 42px;
+                height: 42px;
+                overflow: hidden;
+                background: #ffffff30;
+            }
+            
+            .color-shadow {
+                width: 34px;
+                height: 40px;
+                margin-top: -6px;
+            }
+            
+            .secondary-clothes-color {
+                width: 38px;
+                height: 38px;
+                overflow: hidden;
+                border: solid 2px #ffffff12;
+            }
+            
+            .coloractive {
+                box-shadow: 0px 0px 0px 2px inset #fff;
+            }
+
+            .corelotest-g6 {
+                width: 39vh !important;
+            }
+
+        }
+        .ikicolorbox {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div *ngIf="visible" [bringToTop] [draggable] id="basaripuan">
+    <div id="basaripuanhareket" class="drag-handler">
+        <div class="basaripuan-padding">
+            <div class="basaripuan-header-baslik">{{ 'inventory.achievements' | translate }}</div>
+            <div class="modern-close" (click)="hide()"><div class="christmas_close"></div><div class="christmas_close"></div><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+    <div class="basaripuan-box">
+        <div nitro-achievements-category-list-component></div>
+        <div *ngIf="selectedCategory" nitro-achievements-category-component [category]="selectedCategory"></div>
+    </div>
+</div>
+
+
+<div *ngIf="visible" class="achievements-mobile">
+    <div class="achcontainer">
+        <div nitro-achievements-category-list-component></div>
+        <div *ngIf="selectedCategory" nitro-achievements-category-component [category]="selectedCategory"></div>
+        <div class="ach-right-close">
+            <div class="ach-close" (click)="hide()"><div class="closeshadow"></div><div class="closetab1"></div><div class="closetab2"></div></div>
+        </div>
+    </div>
+</div>
