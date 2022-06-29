@@ -1,57 +1,54 @@
-# Nitro Client
-Nitro Client is a frontend UI written in Angular for rendering [nitro-renderer](https://git.krews.org/nitro/nitro-renderer)
+#### Hi there 👋
 
-## Prerequisites
+Please report any errors you encounter in the hotel clearly to the #modernui-bug channel on the <a href="https://discord.gg/CncqQGp8wd" target="_blank">**CoreloGAMES™**</a> Discord server. **I will try to fix it as soon as possible!**
 
-* You must have [git](https://git-scm.com/) installed
-* You must have [NodeJS](https://nodejs.org/) >= 16.13 installed
-* We recommend you use [Yarn](https://yarnpkg.com/) over [npm](https://npmjs.com/)
-    - ```npm i yarn -g```
-* Install the Angular CLI globally
-    - ```yarn global add @angular/cli```
 
-## Installation
-* First you should open terminal and navigate to the folder where you want to clone Nitro
-* Clone Nitro
-    - ```git clone https://git.krews.org/nitro/nitro-client.git```
-* Install the dependencies
-    - ```yarn install```
-    - This may take some time, please be patient
-* Rename a few files
-    - Rename ``.env.example`` to ``.env``
-    - Rename ``src/renderer-config.json.example`` to ``src/renderer-config.json``
-    - Rename ``src/ui-config.json.example`` to ``src/ui-config.json``
-* Set your links
-    - Open ``.env`` & update the values
-        - The point of this file is to make it easier for deployment
-        - These keys will be injected into your ``index.html``
-    - Open ``src/renderer-config.json``
-        - You may not need to change any values here unless you have customized your assets
-        - ``socket.url, asset.url, image.library.url, & hof.furni.url`` are empty because these values are being pulled from ``.env``. Updating the values here will override ``.env``.
-    - Open ``src/ui-config.json``
-        - The only value that probably needs updating here is ``url.prefix``
-        
-## Usage
-* To use Nitro you will have to have ``.nitro`` assets generated, see [nitro-converter](https://git.krews.org/nitro/nitro-converter) for instructions
-* See [Morningstar Websockets](https://git.krews.org/nitro/ms-websockets) for instructions on configuring websockets on your server
+To change the articles in the hotel view, please open the **ExternalTexts.json** and customize the articles by adding the codes below.
 
-### Development
-Run Nitro in development mode when you are editing the files, this way you can see the changes in your browser instantly
-```
-yarn start
-```
+    "hotel.view.header.1": "header text 1",
+    "hotel.view.header.2": "header text 2",
+    "hotel.view.header.3": "header text 3",
+    "hotel.view.header.4": "header text 4",
+    "hotel.view.description.1": "description text 1",
+    "hotel.view.description.2": "description text 2",
+    "hotel.view.description.3": "description text 3",
+    "hotel.view.description.4": "description text 4",
+    "hotel.view.button.1": "button text 1",
+    "hotel.view.button.2": "button text 2",
+    "hotel.view.button.3": "button text 3",
+    "hotel.view.button.4": "button text 4",
+    "hotel.view.link.1": "your_link",
+    "hotel.view.link.2": "your_link",
+    "hotel.view.link.3": "your_link",
+    "hotel.view.link.4": "your_link"
 
-### Production
-To build a production version of Nitro just run the following command
-```
-yarn build-prod
-```
+To change the articles in the alert and friendsbox, please open the **ExternalTexts.json** and customize the articles by adding the codes below.
 
-* A ``dist`` folder will be generated, these are the files that must be uploaded to your webserver
-* Consult your CMS documentation for compatibility with Nitro and how to add the production files
+    "friends.box.info.desc": "All your active friends and pending friend requests will appear here",
+    "frank": "Frank",
+    "alert.staff.desc": "Hey! Hello buddy, Habbo Hotel Staff has a message for you."
 
-### NitroConfig
-* This is a **required** global variable in the ``index.html`` file
-* This variable contains configuration options that are used when Nitro is bootstrapped
-* See the default ``index.html`` file for the default options
-* Any keys added here will override those keys in your configuration files
+Please replace the hotel-view section on line 40 in your configuration file with this.
+
+    "hotelview.images": {
+        "background": "${asset.url}/images/reception/easter20_background_gradient.png",
+        "background.colour": "#6eadc8",
+        "sun": "${asset.url}/images/reception/sun.png",
+        "drape": "${asset.url}/images/reception/drape.png",
+        "left": "${asset.url}/images/reception/easter20_background_left.png",
+        "right": "${asset.url}/images/reception/background_right_easter2016.png",
+        "right.repeat": "${asset.url}/images/reception/us_top_right.png",
+        "carousel1": "${asset.url}/images/reception/spromo1.png",
+        "carousel2": "${asset.url}/images/reception/spromo2.png",
+        "carousel3": "${asset.url}/images/reception/spromo3.png",
+        "carousel4": "${asset.url}/images/reception/spromo4.png"
+    },
+    
+Please add these codes at the bottom of the configuration file.
+
+    "modernuipower": {
+        "domainIsWrong": ""
+    },
+    "nitrohotel": {
+        "navigator": ""
+    }
